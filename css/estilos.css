@@ -1,0 +1,648 @@
+*{
+	margin: 0;
+	padding:0;
+}
+body{ 
+	min-height: 100vh;
+	width: 100%;
+	background-image: url(../img/fondo1.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	}/*aplicará a los body de todos los html, excepto el background-image, que solo aplica al index*/
+.idx{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}/*este display facilitará ubicar el logo y el cuadro de texto en el body del index*/
+.what{
+	background-image: url(../img/fondo2.jpg);
+}
+.why{
+	background-image: url(../img/fondo3.jpg);
+}
+.get{
+	background-image: url(../img/fondo4.jpg);
+}
+.plan{
+	padding-top: 70px;
+	background-image: url(../img/fondo5.jpg);
+}
+header{
+	position: fixed;/*para que se quede fijo al hacer scroll*/
+	top:0px;
+	left: 0px;
+	height: 70px;
+	width: 100%;
+	background-color: #A7C957;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 1px 15px;/*sombra en la parte inferior*/
+	z-index: 1; /*para que, al hacer scroll, las imágenes se mantengan debajo del header*/
+}
+nav{
+	height: 70px;
+	width: 1000px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul{	
+	height: 100%;
+	width: 100%;
+	list-style: none;/*quita la viñeta*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}/*navegación que contiene la lista con los elementos que contienen links*/
+.seccionlogo{
+	height: 70px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 100px;
+}
+.seccionlogo nav a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	text-decoration: none;/*quita las viñetas a la lista*/
+	font-family: 'Dosis', sans-serif;
+	font-weight: 600;
+	color: #414141;
+}/*links de la lista*/
+.logo{
+	width: 50px;
+}/*logo en el header*/
+.logovolador{
+	width: 280px;
+	position: absolute;
+	animation: movimiento 3s ease-in-out;
+	animation-fill-mode: both;
+	z-index: 2;/*se mantiene encima de los otros elementos*/
+}/*logo en el body*/
+@keyframes movimiento{
+	from{top: -40%;
+	}
+	to{top: 15%;
+	}
+}/*keyframes de la animación para que el logo entre desplazándose hacia abajo*/
+.tupper{
+	width: 100px;
+	position: absolute;
+	z-index:1;
+	animation: movimientodos 10s infinite linear;
+	animation-fill-mode: both;
+}/*elemento que se mueve en diagonal en el body*/
+@keyframes movimientodos{
+	0%,100%{ top: 10%; left: 45%;
+	}
+	25%{ top: 50%; left: 92%;
+	}
+	50%{ top: 87%; left: 45%;
+	}
+	75%{ top: 50%; left: 0%;
+	}
+}/*keyframes para que .tupper se mueva en forma de rombo en el body*/
+.cajatexto{
+	width: 45vw;
+	height: 518px;
+	background-color:#f2e8cf;
+	position: absolute;
+	top: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	animation: movimientotres 3s ease-in-out;
+	animation-fill-mode: both;
+}/*caja o contenedor del texto*/
+@keyframes movimientotres{
+	from{
+		top: 800px;
+	}
+	to{
+		top: 200px;
+	}
+}/*keyframes de la animación que hace que .cajatexto entre desplazándose hacia arriba*/
+.cajatexto p{
+	margin: 10px 20px;
+	text-align: center;
+}
+.cajatexto p:first-child{
+	font-size: 40px;
+}
+.cajatexto p:nth-child(2){
+	font-size: 22px;
+}
+.cajatexto a{
+	margin-top: 20px;
+	margin-bottom: 75px;
+	width: 205px;
+	height: 40px;
+	text-decoration: none; /*quita el subrayado del link*/
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	color: white;
+	border: none;
+	background-color: #386641;
+	border-radius: 25px; /*hace que se vean redondeados los extremos*/
+	display: flex;/*hace que el texto se centre*/
+	justify-content: center;
+	align-items: center;
+}/*"botón" con link que lleva a otro .html, personalizado*/
+.cajatexto a:hover{
+	background-color: #6A994E;
+}/*propiedad para que, al colocar el cursor en el "botón", cambie de color*/
+.what li:first-child a{
+	animation: colorletra 2s infinite;
+}
+.why li:nth-child(2) a{
+	animation: colorletra 2s infinite;
+}
+.get li:nth-child(3) a{
+	animation: colorletra 2s infinite;
+}
+.plan li:nth-child(4) a{
+	animation: colorletra 2s infinite;
+}/*las cuatro anteriores propiedades hacen que, según la página en la que uno se ubique, se ilumine con efecto neón su correspondiente elemento en el <nav> del header*/
+@keyframes colorletra{
+	0%,100%{
+		color: white;
+		text-shadow: 0 0 7px #fff,
+		0 0 10px #fff;
+	}
+	50%{
+		color: #414141;
+	}
+}/*keyframes de la animación que da efecto neón blanco al texto*/
+h1{
+	margin: 40px 80px 10px 80px;
+	font-family: 'East Sea Dokdo', cursive;
+	font-size: 65px;
+	line-height: 70%;
+}
+p{
+	margin: 0px 600px 10px 80px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	color: #414141;
+}
+.what p:nth-child(2), .why p:nth-child(2), .get .contenedortexto p:first-child{
+	margin-top: 120px;
+}/*otorga distancia repecto del header*/
+.why p{
+	margin: 0px 80px 10px 645px;
+}/*ubica el texto de tal manera que sea visible sobre el fondo utilizado*/
+.why h1,.why p{
+	text-align: right;
+}
+.get .contenedortexto{
+	height: 100%;
+	width: 67.7vw;/*es el tamaño perfecto para que coincida con la parte gris del fondo (en Chrome)*/
+}
+.get h1, .get p{
+	position: relative;
+	width: calc(100% - 70px);
+	margin: 0px;
+	padding: 5px 35px;
+}
+.get h1{
+	margin-top: 60px;
+}
+.get p{
+	margin-top: 20px;
+}
+p span{
+	font-weight: bolder;
+}/*hace que los enlaces, que suelen estar en un <span>, se vean en Negrita*/
+footer{
+	width: 100%;
+	margin-top: 50px;
+}/*le da tamaño al footer en todas las páginas que lo tienen y una distancia respecto del elemento que esté arriba*/
+footer img{
+	width: 100%;
+	height: 400px;
+	object-fit: cover;/*hace que la imagen no se deforme acorde al tamaño del footer*/
+	filter: hue-rotate(40deg) grayscale(75%);/*le da un efecto verdoso pero en blanco y negro*/
+}
+.plan footer{
+	margin: 0px;
+}
+.get footer img, .tips{
+	filter: hue-rotate(30deg) grayscale(75%);
+}/*por estética, cambia un poco el filtro del footer de la página getstarted.html, y le da el mismo efecto a las imágenes dentro de la misma*/
+.get .tips{
+	height: 500px;
+	width: 100%;
+	margin-top: 10px;
+	object-fit: cover;
+}
+.plan{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.contenedores{
+	width: 1100px;
+	background-color: #F7F7F7;
+	box-shadow: 1px 0px 20px, -1px -30px 20px; /*sombra visible en ambos lados*/
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}/*Este elemento es como una hoja en blanco sobre el fondo*/
+.gridmed,.gridasia,.gridlat,.gridrandom{
+	width: 900px;
+	height: 340px;
+	border: 3px solid black;
+	display: grid;
+	grid-template-columns: 90px 135px 135px 135px 135px 135px 135px  ;
+	grid-template-rows: 80px 130px 130px;
+	justify-content: center;
+	align-content: center;
+}/*Estos elementos son las "tablas" o grid, con el tamaño de las columnas y filas configurado, así como la alineación de su contenido y sus bordes*/
+.plan .contenedores p{
+	margin: 0px;
+	border: 1px solid #888;
+	text-align: center;
+	display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.lasagna a:hover{
+	background-image: url(../img/lasagna.jpg);
+	background-size: 100%;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}/*Este elemento y los once siguientes hacen que, al pasar el cursor sobre el elemento en el grid, aparezca una imagen y cambie el estilo del texto*/
+.chickpea a:hover{
+	background-image: url(../img/garbanzos.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.falafel a:hover{
+	background-image: url(../img/falafel.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.salad a:hover{
+	background-image: url(../img/ensalada.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.thai a:hover{
+	background-image: url(../img/thai.jpg);
+	background-size: 100%;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.gochujang a:hover{
+	background-image: url(../img/gochujang.jpg);
+	background-size: 100%;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.rolls a:hover{
+	background-image: url(../img/rolls.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.pho a:hover{
+	background-image: url(../img/pho.jpg);
+	background-size: 100%;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.beans a:hover{
+	background-image: url(../img/frejoles.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.lomo a:hover{
+	background-image: url(../img/lomo.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.causa a:hover{
+	background-image: url(../img/causa.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,	0 0 10px #fff; 
+}
+.fajitas a:hover{
+	background-image: url(../img/fajitas.jpg);
+	background-size: 100%;
+	color: black;
+	font-weight: bold;
+	text-shadow: 0 0 7px #fff,
+	0 0 10px #fff; 
+}
+.contenedores button{
+	margin: 50px 0px;
+	width: 200px;
+	font-size: 20px;
+}/*este es el estilo del botón que produce almuerzos y cenas aleatorios en el grid*/
+.plan .contenedores h2{
+	text-align: center;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	color: #414141;
+	margin: 0px 20px;
+}/*este es el estilo de los textos (no los títulos) en plan.html*/
+.plan .contenedores h2:first-child{
+	padding-top: 60px;
+}
+.plan .contenedores h2:nth-child(9){
+	padding-bottom: 15px;
+}
+.plan p a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	color: #414141;
+	display: flex;
+    align-items: center;
+    justify-content: center; 
+}/*este es el estilo del texto con link dentro del grid*/
+.abrirmenu,.cerrarmenu{
+	display: none
+}
+
+/*a continuación se aplican los Media Queries para volver la página responsive en diferentes dispositivos.*/
+@media screen and (max-width: 1200px){
+	.cajatexto p:first-child{
+		font-size: 30px;
+		font-weight: bolder;
+	}
+	.what p{
+		margin-right: 450px;	
+	}
+	.why p{
+		margin-left: 550px;
+	}
+}
+@media screen and (max-width: 1000px){
+	.get{
+		background-image: none;
+		background-color: #d3dae0;
+	}
+	.get .tips, .get .contenedortexto{
+		width: 100vw;
+	}
+	.plan .contenedores{
+		width: 900px;
+	}
+	.plan .contenedores div{
+		width: 600px;
+		height: 226px;
+		grid-template-columns: 60px 90px 90px 90px 90px 90px 90px;
+		grid-template-rows: 53.3px 86.6px 86.6px;
+	}
+}
+@media screen and (max-width: 950px){
+	.idx .tupper{
+		display:none;
+	}
+	.logovolador{
+		width: 210px;
+		z-index: 1;
+	}
+	@keyframes movimiento{
+		0%{
+			top: -40%;
+		}
+		100%{
+			top: 13%;
+		}
+	}
+	.cajatexto{
+		z-index: 0;
+	}
+	nav{
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		padding: 40px;
+		width: calc(100% - 80px);
+		height: calc(100vh - 80px);
+		background-color: rgba(38,66,41,0.9);
+		transition: top 0.9s;
+	}
+	.seccionlogo nav a{
+		color: white;
+		font-size: 2em;
+	}
+	.desplegado{
+		top:0vh;
+		z-index: 2;
+	}
+	nav ul{
+		top: 50px;
+		height: 255px;
+		width: 410px;
+		display: block;
+		position: absolute;
+	}
+	nav li:not(:last-child){
+		margin-right: 0;
+	}
+	nav li:not(:first-child){
+		margin-top: 20px;
+	}
+	.abrirmenu{
+		display: block;
+		position: absolute;
+		right: 20px;
+		height: 50px;
+		width: 50px;
+		cursor: pointer;
+	}/*cuadrado que, al hacerle click en responsive para tablet y móvil, desplegará el menú*/
+	.abrirmenu span{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 3px;
+		background-color: black;
+		margin: 4px;
+	}/*líneas dentro del cuadrado*/
+	.cerrarmenu{
+		display: block;
+		height: 45px;
+		width: 45px;
+		position: absolute;
+		cursor: pointer;
+		font-family: Arial;
+		font-size: 30px;
+		top: 310px;
+	}/*cuadrado con el que, al hacerle click, se cerrará el menú desplegable*/
+	.cajatexto p:first-child{
+		font-weight: bolder;
+	}
+		.what p{
+		margin: 0px 265px 10px 80px;	
+	}
+	.what p, .why p, .get p{
+		font-size: 20px;
+	}
+	.why p{
+		margin-left: 300px;
+		margin-right: 40px;
+	}
+	.why h1{
+		margin-right: 40px;
+	}
+	.seccionlogo{
+		padding: 0px 25px;
+	}
+}
+@media screen and (max-width: 840px){
+	.plan .contenedores{
+		width: 560px;
+	}
+	.plan .contenedores h1{
+		text-align: center;
+		font-size: 55px;
+	}
+	.plan .contenedores div{
+		width: 400px;
+		height: 151px;
+		grid-template-columns: 40px 60px 60px 60px 60px 60px 60px;
+		grid-template-rows: 35.6px 57.7px 57.7px;
+	}
+	.plan .contenedores div p, .plan .contenedores div a{
+		font-size: 13px;
+	}
+	.why{
+		background-image: none;
+		background-color: #d3dae0;
+	}
+	.why p, .why h1{
+		margin-left: 200px;
+	}
+}
+@media screen and (max-width: 733px){
+	.cajatexto p:first-child{
+		font-size: 28px;
+		font-weight: bolder;
+	}
+	.cajatexto p:nth-child(2){
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 650px){
+	.idx .cajatexto{
+		width: 78vw;
+		height: 480px;
+	}
+	.what h1{
+		margin: 0px 40px 10px 40px;
+		font-size: 34px;
+	}
+	.what p{
+		font-size: 18px;
+		margin-right: 40px;
+		margin-left: 40px;
+	}
+	.why p{
+		margin-left: 200px;
+		margin-right: 40px;
+	}
+	.seccionlogo nav ul li a{
+		font-size: 1.5em;
+	}
+@media screen and (max-width: 500px){
+	.cajatexto p:first-child{
+		font-size: 24px;
+		font-weight: bolder;
+	}
+	.cajatexto p:nth-child(2){
+		font-size: 18px;
+	}
+	.what h1, .why h1, .get h1{
+		margin: 30px 40px 10px 40px;
+		font-size: 34px;
+	}
+	.what p, .why p{
+		margin-right: 40px;
+		margin-left: 40px;
+	}
+	.why{
+		background-image: url(../img/fondo2.jpg);
+	}
+	.get h1{
+		margin-left: 0px;
+	}
+	.get .contenedortexto p:not(first-child){
+		margin-top: 0px;
+	}
+	.plan .contenedores{
+		width: 430px;
+	}
+	.plan .contenedores h1{
+		font-size: 38px;
+	}
+	.plan .contenedores h2{
+		font-size: 18px;
+	}
+	.plan .contenedores button{
+		font-size: 16px;
+	}
+	@keyframes movimiento{
+		0%{
+			top: -40%;
+		}
+		100%{
+			top: 17%;
+		}
+	}
+}
+@media screen and (max-width:400px){
+	.plan .contenedores{
+		width: 308px;
+	}
+	.plan .contenedores h1{
+		font-size: 36px;
+	}
+	.plan .contenedores h2{
+		font-size: 15px;
+	}
+	.plan .contenedores div{
+		width: 296px;
+		height: 113px;
+		grid-template-columns: 30px 44.5px 44.5px 44.5px 44.5px 44.5px 44.5px;
+		grid-template-rows: 26.7px 43.3px 43.3px;
+	}
+	.plan .contenedores div p, .plan .contenedores div a{
+		font-size: 10px;
+	}
+}
